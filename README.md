@@ -11,10 +11,11 @@ Instagram clone application made with Flutter with the following features:
 * [x] add splash screen
 
 ## Authentication (Login/Logout/Sign Up)
-  * [ ] login/signup with email and password
-  * [ ] login/signup with Google
-  * [ ] login/signup with Apple
-  * [ ] reset password
+  * [x] login/signup with email and password
+  * [x] login/signup with Google
+  * [x] sign out
+  * [ ] login/signup with Apple (optional)
+  * [ ] reset password (optional)
 
 ## Add post
  * [ ] add multiples pictures from the gallery and the camera
