@@ -44,7 +44,7 @@ class UsernamePage extends StatelessWidget {
                     },
                   ),
                   const Spacer(),
-                  FlatButton(
+                  TextButton(
                     child: const Text('Continue'),
                     onPressed: () {
                       if (Form.of(context).validate()) {

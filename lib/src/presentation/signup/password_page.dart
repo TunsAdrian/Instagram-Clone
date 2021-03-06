@@ -48,7 +48,7 @@ class PasswordPage extends StatelessWidget with DialogMixin {
                     },
                   ),
                   const Spacer(),
-                  FlatButton(
+                  TextButton(
                     child: const Text('SignUp!'),
                     onPressed: () {
                       if (Form.of(context).validate()) {

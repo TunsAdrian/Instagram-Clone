@@ -35,7 +35,7 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'auth':
           result.auth.replace(serializers.deserialize(value,
@@ -56,9 +56,7 @@ class _$AppState extends AppState {
       (new AppStateBuilder()..update(updates)).build();
 
   _$AppState._({this.auth}) : super._() {
-    if (auth == null) {
-      throw new BuiltValueNullFieldError('AppState', 'auth');
-    }
+    BuiltValueNullFieldError.checkNotNull(auth, 'AppState', 'auth');
   }
 
   @override
@@ -96,8 +94,9 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   AppStateBuilder();
 
   AppStateBuilder get _$this {
-    if (_$v != null) {
-      _auth = _$v.auth?.toBuilder();
+    final $v = _$v;
+    if ($v != null) {
+      _auth = $v.auth.toBuilder();
       _$v = null;
     }
     return this;
@@ -105,9 +104,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
 
   @override
   void replace(AppState other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AppState;
   }
 

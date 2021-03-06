@@ -71,16 +71,22 @@ class _LoginPageState extends State<LoginPage> with DialogMixin {
                   ),
                   ButtonBar(
                     children: <Widget>[
-                      FlatButton(
+                      TextButton(
                         child: const Text('Sign in with Google'),
                         onPressed: () {
                           StoreProvider.of<AppState>(context).dispatch(SignUpWithGoogle(_response));
                         },
                       ),
+                      TextButton(
+                        child: const Text('Reset passowrd'),
+                        onPressed: () {
+                          Navigator.pushNamed(context, AppRoutes.resetPassword);
+                        },
+                      ),
                     ],
                   ),
                   const Spacer(),
-                  FlatButton(
+                  TextButton(
                     child: const Text('Login'),
                     onPressed: () {
                       if (Form.of(context).validate()) {

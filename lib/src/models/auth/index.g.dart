@@ -30,10 +30,12 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
       serializers.serialize(object.username,
           specifiedType: const FullType(String)),
     ];
-    if (object.photoUrl != null) {
+    Object value;
+    value = object.photoUrl;
+    if (value != null) {
       result
         ..add('photoUrl')
-        ..add(serializers.serialize(object.photoUrl,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
     return result;
@@ -48,7 +50,7 @@ class _$AppUserSerializer implements StructuredSerializer<AppUser> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'uid':
           result.uid = serializers.deserialize(value,
@@ -87,10 +89,12 @@ class _$AuthStateSerializer implements StructuredSerializer<AuthState> {
       serializers.serialize(object.info,
           specifiedType: const FullType(RegistrationInfo)),
     ];
-    if (object.user != null) {
+    Object value;
+    value = object.user;
+    if (value != null) {
       result
         ..add('user')
-        ..add(serializers.serialize(object.user,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(AppUser)));
     }
     return result;
@@ -105,7 +109,7 @@ class _$AuthStateSerializer implements StructuredSerializer<AuthState> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'user':
           result.user.replace(serializers.deserialize(value,
@@ -134,22 +138,26 @@ class _$RegistrationInfoSerializer
   Iterable<Object> serialize(Serializers serializers, RegistrationInfo object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[];
-    if (object.email != null) {
+    Object value;
+    value = object.email;
+    if (value != null) {
       result
         ..add('email')
-        ..add(serializers.serialize(object.email,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.password != null) {
+    value = object.password;
+    if (value != null) {
       result
         ..add('password')
-        ..add(serializers.serialize(object.password,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    if (object.username != null) {
+    value = object.username;
+    if (value != null) {
       result
         ..add('username')
-        ..add(serializers.serialize(object.username,
+        ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
     return result;
@@ -165,7 +173,7 @@ class _$RegistrationInfoSerializer
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object value = iterator.current;
       switch (key) {
         case 'email':
           result.email = serializers.deserialize(value,
@@ -201,15 +209,9 @@ class _$AppUser extends AppUser {
 
   _$AppUser._({this.uid, this.email, this.username, this.photoUrl})
       : super._() {
-    if (uid == null) {
-      throw new BuiltValueNullFieldError('AppUser', 'uid');
-    }
-    if (email == null) {
-      throw new BuiltValueNullFieldError('AppUser', 'email');
-    }
-    if (username == null) {
-      throw new BuiltValueNullFieldError('AppUser', 'username');
-    }
+    BuiltValueNullFieldError.checkNotNull(uid, 'AppUser', 'uid');
+    BuiltValueNullFieldError.checkNotNull(email, 'AppUser', 'email');
+    BuiltValueNullFieldError.checkNotNull(username, 'AppUser', 'username');
   }
 
   @override
@@ -269,11 +271,12 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
   AppUserBuilder();
 
   AppUserBuilder get _$this {
-    if (_$v != null) {
-      _uid = _$v.uid;
-      _email = _$v.email;
-      _username = _$v.username;
-      _photoUrl = _$v.photoUrl;
+    final $v = _$v;
+    if ($v != null) {
+      _uid = $v.uid;
+      _email = $v.email;
+      _username = $v.username;
+      _photoUrl = $v.photoUrl;
       _$v = null;
     }
     return this;
@@ -281,9 +284,7 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
 
   @override
   void replace(AppUser other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AppUser;
   }
 
@@ -296,7 +297,12 @@ class AppUserBuilder implements Builder<AppUser, AppUserBuilder> {
   _$AppUser build() {
     final _$result = _$v ??
         new _$AppUser._(
-            uid: uid, email: email, username: username, photoUrl: photoUrl);
+            uid: BuiltValueNullFieldError.checkNotNull(uid, 'AppUser', 'uid'),
+            email: BuiltValueNullFieldError.checkNotNull(
+                email, 'AppUser', 'email'),
+            username: BuiltValueNullFieldError.checkNotNull(
+                username, 'AppUser', 'username'),
+            photoUrl: photoUrl);
     replace(_$result);
     return _$result;
   }
@@ -312,9 +318,7 @@ class _$AuthState extends AuthState {
       (new AuthStateBuilder()..update(updates)).build();
 
   _$AuthState._({this.user, this.info}) : super._() {
-    if (info == null) {
-      throw new BuiltValueNullFieldError('AuthState', 'info');
-    }
+    BuiltValueNullFieldError.checkNotNull(info, 'AuthState', 'info');
   }
 
   @override
@@ -359,9 +363,10 @@ class AuthStateBuilder implements Builder<AuthState, AuthStateBuilder> {
   AuthStateBuilder();
 
   AuthStateBuilder get _$this {
-    if (_$v != null) {
-      _user = _$v.user?.toBuilder();
-      _info = _$v.info?.toBuilder();
+    final $v = _$v;
+    if ($v != null) {
+      _user = $v.user?.toBuilder();
+      _info = $v.info.toBuilder();
       _$v = null;
     }
     return this;
@@ -369,9 +374,7 @@ class AuthStateBuilder implements Builder<AuthState, AuthStateBuilder> {
 
   @override
   void replace(AuthState other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AuthState;
   }
 
@@ -470,10 +473,11 @@ class RegistrationInfoBuilder
   RegistrationInfoBuilder();
 
   RegistrationInfoBuilder get _$this {
-    if (_$v != null) {
-      _email = _$v.email;
-      _password = _$v.password;
-      _username = _$v.username;
+    final $v = _$v;
+    if ($v != null) {
+      _email = $v.email;
+      _password = $v.password;
+      _username = $v.username;
       _$v = null;
     }
     return this;
@@ -481,9 +485,7 @@ class RegistrationInfoBuilder
 
   @override
   void replace(RegistrationInfo other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$RegistrationInfo;
   }
 

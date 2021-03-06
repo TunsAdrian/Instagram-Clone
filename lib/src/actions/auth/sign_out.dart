@@ -7,5 +7,5 @@ abstract class SignOut with _$SignOut implements AppAction {
   const factory SignOut.successful() = SignOutSuccessful;
 
   @Implements(ErrorAction)
-  const factory SignOut.error(StateError error) = SignOutError;
+  const factory SignOut.error(Object error) = SignOutError;
 }
