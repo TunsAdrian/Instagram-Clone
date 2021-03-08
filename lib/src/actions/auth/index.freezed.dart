@@ -1054,6 +1054,448 @@ abstract class UpdateRegistrationInfo$ implements UpdateRegistrationInfo {
 }
 
 /// @nodoc
+class _$SearchUsersTearOff {
+  const _$SearchUsersTearOff();
+
+// ignore: unused_element
+  SearchUsers$ call(String query) {
+    return SearchUsers$(
+      query,
+    );
+  }
+
+// ignore: unused_element
+  SearchUsersSuccessful successful(List<AppUser> users) {
+    return SearchUsersSuccessful(
+      users,
+    );
+  }
+
+// ignore: unused_element
+  SearchUsersError error(Object error) {
+    return SearchUsersError(
+      error,
+    );
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $SearchUsers = _$SearchUsersTearOff();
+
+/// @nodoc
+mixin _$SearchUsers {
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(String query), {
+    @required Result successful(List<AppUser> users),
+    @required Result error(Object error),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(String query), {
+    Result successful(List<AppUser> users),
+    Result error(Object error),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(SearchUsers$ value), {
+    @required Result successful(SearchUsersSuccessful value),
+    @required Result error(SearchUsersError value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(SearchUsers$ value), {
+    Result successful(SearchUsersSuccessful value),
+    Result error(SearchUsersError value),
+    @required Result orElse(),
+  });
+}
+
+/// @nodoc
+abstract class $SearchUsersCopyWith<$Res> {
+  factory $SearchUsersCopyWith(
+          SearchUsers value, $Res Function(SearchUsers) then) =
+      _$SearchUsersCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SearchUsersCopyWithImpl<$Res> implements $SearchUsersCopyWith<$Res> {
+  _$SearchUsersCopyWithImpl(this._value, this._then);
+
+  final SearchUsers _value;
+  // ignore: unused_field
+  final $Res Function(SearchUsers) _then;
+}
+
+/// @nodoc
+abstract class $SearchUsers$CopyWith<$Res> {
+  factory $SearchUsers$CopyWith(
+          SearchUsers$ value, $Res Function(SearchUsers$) then) =
+      _$SearchUsers$CopyWithImpl<$Res>;
+  $Res call({String query});
+}
+
+/// @nodoc
+class _$SearchUsers$CopyWithImpl<$Res> extends _$SearchUsersCopyWithImpl<$Res>
+    implements $SearchUsers$CopyWith<$Res> {
+  _$SearchUsers$CopyWithImpl(
+      SearchUsers$ _value, $Res Function(SearchUsers$) _then)
+      : super(_value, (v) => _then(v as SearchUsers$));
+
+  @override
+  SearchUsers$ get _value => super._value as SearchUsers$;
+
+  @override
+  $Res call({
+    Object query = freezed,
+  }) {
+    return _then(SearchUsers$(
+      query == freezed ? _value.query : query as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SearchUsers$ implements SearchUsers$ {
+  const _$SearchUsers$(this.query) : assert(query != null);
+
+  @override
+  final String query;
+
+  @override
+  String toString() {
+    return 'SearchUsers(query: $query)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SearchUsers$ &&
+            (identical(other.query, query) ||
+                const DeepCollectionEquality().equals(other.query, query)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(query);
+
+  @override
+  $SearchUsers$CopyWith<SearchUsers$> get copyWith =>
+      _$SearchUsers$CopyWithImpl<SearchUsers$>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(String query), {
+    @required Result successful(List<AppUser> users),
+    @required Result error(Object error),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return $default(query);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(String query), {
+    Result successful(List<AppUser> users),
+    Result error(Object error),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if ($default != null) {
+      return $default(query);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(SearchUsers$ value), {
+    @required Result successful(SearchUsersSuccessful value),
+    @required Result error(SearchUsersError value),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(SearchUsers$ value), {
+    Result successful(SearchUsersSuccessful value),
+    Result error(SearchUsersError value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchUsers$ implements SearchUsers {
+  const factory SearchUsers$(String query) = _$SearchUsers$;
+
+  String get query;
+  $SearchUsers$CopyWith<SearchUsers$> get copyWith;
+}
+
+/// @nodoc
+abstract class $SearchUsersSuccessfulCopyWith<$Res> {
+  factory $SearchUsersSuccessfulCopyWith(SearchUsersSuccessful value,
+          $Res Function(SearchUsersSuccessful) then) =
+      _$SearchUsersSuccessfulCopyWithImpl<$Res>;
+  $Res call({List<AppUser> users});
+}
+
+/// @nodoc
+class _$SearchUsersSuccessfulCopyWithImpl<$Res>
+    extends _$SearchUsersCopyWithImpl<$Res>
+    implements $SearchUsersSuccessfulCopyWith<$Res> {
+  _$SearchUsersSuccessfulCopyWithImpl(
+      SearchUsersSuccessful _value, $Res Function(SearchUsersSuccessful) _then)
+      : super(_value, (v) => _then(v as SearchUsersSuccessful));
+
+  @override
+  SearchUsersSuccessful get _value => super._value as SearchUsersSuccessful;
+
+  @override
+  $Res call({
+    Object users = freezed,
+  }) {
+    return _then(SearchUsersSuccessful(
+      users == freezed ? _value.users : users as List<AppUser>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SearchUsersSuccessful implements SearchUsersSuccessful {
+  const _$SearchUsersSuccessful(this.users) : assert(users != null);
+
+  @override
+  final List<AppUser> users;
+
+  @override
+  String toString() {
+    return 'SearchUsers.successful(users: $users)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SearchUsersSuccessful &&
+            (identical(other.users, users) ||
+                const DeepCollectionEquality().equals(other.users, users)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(users);
+
+  @override
+  $SearchUsersSuccessfulCopyWith<SearchUsersSuccessful> get copyWith =>
+      _$SearchUsersSuccessfulCopyWithImpl<SearchUsersSuccessful>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(String query), {
+    @required Result successful(List<AppUser> users),
+    @required Result error(Object error),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return successful(users);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(String query), {
+    Result successful(List<AppUser> users),
+    Result error(Object error),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (successful != null) {
+      return successful(users);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(SearchUsers$ value), {
+    @required Result successful(SearchUsersSuccessful value),
+    @required Result error(SearchUsersError value),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(SearchUsers$ value), {
+    Result successful(SearchUsersSuccessful value),
+    Result error(SearchUsersError value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchUsersSuccessful implements SearchUsers {
+  const factory SearchUsersSuccessful(List<AppUser> users) =
+      _$SearchUsersSuccessful;
+
+  List<AppUser> get users;
+  $SearchUsersSuccessfulCopyWith<SearchUsersSuccessful> get copyWith;
+}
+
+/// @nodoc
+abstract class $SearchUsersErrorCopyWith<$Res> {
+  factory $SearchUsersErrorCopyWith(
+          SearchUsersError value, $Res Function(SearchUsersError) then) =
+      _$SearchUsersErrorCopyWithImpl<$Res>;
+  $Res call({Object error});
+}
+
+/// @nodoc
+class _$SearchUsersErrorCopyWithImpl<$Res>
+    extends _$SearchUsersCopyWithImpl<$Res>
+    implements $SearchUsersErrorCopyWith<$Res> {
+  _$SearchUsersErrorCopyWithImpl(
+      SearchUsersError _value, $Res Function(SearchUsersError) _then)
+      : super(_value, (v) => _then(v as SearchUsersError));
+
+  @override
+  SearchUsersError get _value => super._value as SearchUsersError;
+
+  @override
+  $Res call({
+    Object error = freezed,
+  }) {
+    return _then(SearchUsersError(
+      error == freezed ? _value.error : error,
+    ));
+  }
+}
+
+@Implements(ErrorAction)
+
+/// @nodoc
+class _$SearchUsersError implements SearchUsersError {
+  const _$SearchUsersError(this.error) : assert(error != null);
+
+  @override
+  final Object error;
+
+  @override
+  String toString() {
+    return 'SearchUsers.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SearchUsersError &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(error);
+
+  @override
+  $SearchUsersErrorCopyWith<SearchUsersError> get copyWith =>
+      _$SearchUsersErrorCopyWithImpl<SearchUsersError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>(
+    Result $default(String query), {
+    @required Result successful(List<AppUser> users),
+    @required Result error(Object error),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>(
+    Result $default(String query), {
+    Result successful(List<AppUser> users),
+    Result error(Object error),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>(
+    Result $default(SearchUsers$ value), {
+    @required Result successful(SearchUsersSuccessful value),
+    @required Result error(SearchUsersError value),
+  }) {
+    assert($default != null);
+    assert(successful != null);
+    assert(error != null);
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>(
+    Result $default(SearchUsers$ value), {
+    Result successful(SearchUsersSuccessful value),
+    Result error(SearchUsersError value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchUsersError implements SearchUsers, ErrorAction {
+  const factory SearchUsersError(Object error) = _$SearchUsersError;
+
+  Object get error;
+  $SearchUsersErrorCopyWith<SearchUsersError> get copyWith;
+}
+
+/// @nodoc
 class _$SignOutTearOff {
   const _$SignOutTearOff();
 

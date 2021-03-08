@@ -1,7 +1,9 @@
+import 'package:built_collection/built_collection.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:instagram_clone/src/models/index.dart';
+import 'package:instagram_clone/src/data/index.dart';
 import 'package:meta/meta.dart';
 
 class AuthApi {
@@ -33,7 +35,8 @@ class AuthApi {
       b
         ..uid = user.uid
         ..email = user.email
-        ..username = username;
+        ..username = username
+        ..searchIndex = ListBuilder<String>(<String>[username].searchIndex);
     });
 
     await _firestore.doc('users/${user.uid}').set(appUser.json);
@@ -55,7 +58,7 @@ class AuthApi {
 
     // create/login with google credential
     final OAuthCredential credential =
-    GoogleAuthProvider.credential(idToken: authentication.idToken, accessToken: authentication.accessToken);
+        GoogleAuthProvider.credential(idToken: authentication.idToken, accessToken: authentication.accessToken);
 
     final UserCredential response = await _auth.signInWithCredential(credential);
     final User user = response.user;
@@ -70,7 +73,8 @@ class AuthApi {
         ..uid = user.uid
         ..email = user.email
         ..username = user.email.split('@').first
-        ..photoUrl = user.photoURL;
+        ..photoUrl = user.photoURL
+        ..searchIndex = ListBuilder<String>(<String>[user.email.split('@').first].searchIndex);
     });
 
     await _firestore.doc('users/${user.uid}').set(appUser.json);
@@ -79,5 +83,16 @@ class AuthApi {
 
   Future<void> resetPassword(String email) {
     return _auth.sendPasswordResetEmail(email: email);
+  }
+
+  Future<List<AppUser>> searchUsers(String query) async {
+    final QuerySnapshot snapshot = await _firestore
+        .collection('users') //
+        .where('searchIndex', arrayContains: query)
+        .get();
+
+    return snapshot.docs //
+        .map((QueryDocumentSnapshot snapshot) => AppUser.fromJson(snapshot.data()))
+        .toList();
   }
 }

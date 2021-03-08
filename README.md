@@ -18,11 +18,11 @@ Instagram clone application made with Flutter with the following features:
   * [x] reset password (optional)
 
 ## Add post
- * [ ] add multiples pictures from the gallery and the camera
- * [ ] add tags
- * [ ] add person
- * [ ] add location
- * [ ] post comment
+ * [x] add multiples pictures from the gallery and the camera
+ * [x] add tags
+ * [x] add person
+ * [x] add location
+ * [x] post comment
 
 ## Feed Page
   * [ ] show posts of users that I follow
