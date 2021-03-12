@@ -6,3 +6,4 @@ import 'package:instagram_clone/src/models/index.dart';
 import 'package:redux/redux.dart';
 
 part 'post_info_container.dart';
+part 'posts_container.dart';

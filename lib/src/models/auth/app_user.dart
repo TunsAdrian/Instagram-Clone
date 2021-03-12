@@ -13,6 +13,8 @@ abstract class AppUser implements Built<AppUser, AppUserBuilder> {
 
   String get username;
 
+  BuiltList<String> get following;
+
   BuiltList<String> get searchIndex;
 
   @nullable

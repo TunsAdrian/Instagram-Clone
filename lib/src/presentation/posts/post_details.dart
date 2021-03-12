@@ -23,9 +23,9 @@ class PostDetails extends StatelessWidget {
                 child: const Text('Share'),
                 onPressed: () {
                   StoreProvider.of<AppState>(context).dispatch(const CreatePost());
-                  Navigator.pop(context);
+                  Navigator.popUntil(context, ModalRoute.withName(AppRoutes.home));
                 },
-              )
+              ),
             ],
           ),
           body: Padding(
@@ -101,10 +101,9 @@ class PostDetails extends StatelessWidget {
                     final Location location = Location();
 
                     PermissionStatus permissionResult = await location.hasPermission();
-
                     if (permissionResult != PermissionStatus.granted &&
                         permissionResult != PermissionStatus.grantedLimited) {
-                      await location.requestPermission();
+                      permissionResult = await location.requestPermission();
                     }
 
                     if (permissionResult != PermissionStatus.granted &&
@@ -112,7 +111,7 @@ class PostDetails extends StatelessWidget {
                       return;
                     }
 
-                    final LocationData result = await Location().getLocation();
+                    final LocationData result = await location.getLocation();
                     StoreProvider.of<AppState>(context)
                         .dispatch(UpdatePostInfo(lat: result.latitude, lng: result.longitude));
                   },

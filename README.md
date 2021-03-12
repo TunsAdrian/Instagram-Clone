@@ -25,7 +25,7 @@ Instagram clone application made with Flutter with the following features:
  * [x] post comment
 
 ## Feed Page
-  * [ ] show posts of users that I follow
+  * [x] show posts of users that I follow
   * [ ] add comment
   * [ ] like (double tap to like)
   * [ ] share
@@ -46,7 +46,7 @@ Instagram clone application made with Flutter with the following features:
   * [ ] new post from following
 
 ## Profile page
-  * [ ] follow user
+  * [x] follow user
   * [ ] profile counters(posts, followers and following)
   * [ ] users posts
   * [ ] posts tagged with user

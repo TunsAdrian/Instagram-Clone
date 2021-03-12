@@ -12,3 +12,6 @@ part 'search_users.dart';
 part 'sign_out.dart';
 part 'sign_up_with_google.dart';
 part 'sign_up.dart';
+part 'update_following.dart';
+part 'get_user.dart';
+part 'initialize_app.dart';

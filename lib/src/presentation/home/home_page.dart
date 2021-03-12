@@ -4,6 +4,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:instagram_clone/src/actions/auth/index.dart';
 import 'package:instagram_clone/src/actions/posts/index.dart';
 import 'package:instagram_clone/src/models/index.dart';
+import 'package:instagram_clone/src/presentation/feed/feed_page.dart';
+import 'package:instagram_clone/src/presentation/widgets/search_users_page.dart';
 
 import '../routes.dart';
 
@@ -20,23 +22,22 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.power_settings_new),
-            onPressed: () {
-              StoreProvider.of<AppState>(context).dispatch(const SignOut());
-            },
-          ),
-        ],
-      ),
       body: <Widget>[
-        Container(color: Colors.red),
+        const FeedPage(),
+        const SearchUsersPage(showFollow: true),
         Container(color: Colors.blue),
-        Container(color: Colors.green),
         Container(color: Colors.yellow),
-        Container(color: Colors.orange),
+        Container(
+          color: Colors.orange,
+          child: Center(
+            child: IconButton(
+              icon: const Icon(Icons.power_settings_new),
+              onPressed: () {
+                StoreProvider.of<AppState>(context).dispatch(const SignOut());
+              },
+            ),
+          ),
+        ),
       ][_page],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _page,
@@ -57,8 +58,8 @@ class _HomePageState extends State<HomePage> {
             label: 'home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'home',
+            icon: Icon(Icons.search),
+            label: 'search',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.add),
