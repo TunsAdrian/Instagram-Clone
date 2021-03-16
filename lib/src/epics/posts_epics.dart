@@ -31,7 +31,7 @@ class PostsEpics {
   Stream<AppAction> _listenForPosts(Stream<ListenForPosts$> actions, EpicStore<AppState> store) {
     return actions //
         .flatMap((ListenForPosts$ action) => Stream<ListenForPosts$>.value(action)
-            .asyncMap((ListenForPosts$ action) => _api.listenForPosts([
+            .asyncMap((ListenForPosts$ action) => _api.listenForPosts(<String>[
                   store.state.auth.user.uid,
                   ...store.state.auth.user.following,
                 ]))

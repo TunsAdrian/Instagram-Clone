@@ -54,7 +54,6 @@ class _FeedPageState extends State<FeedPage> {
                       ),
                       Image.network(
                         post.images.first,
-                        height: MediaQuery.of(context).size.width,
                         fit: BoxFit.cover,
                       ),
                       Row(

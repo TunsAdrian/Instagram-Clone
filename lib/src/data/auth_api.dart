@@ -28,8 +28,8 @@ class AuthApi {
       return null;
     }
 
-    final DocumentSnapshot snapshot = await _firestore.doc('/users/${user.uid}').get();
-    return AppUser.fromJson(snapshot);
+    final DocumentSnapshot snapshot = await _firestore.doc('users/${user.uid}').get();
+    return AppUser.fromJson(snapshot.data());
   }
 
   Future<AppUser> login({@required String email, @required String password}) async {
@@ -121,8 +121,7 @@ class AuthApi {
   }
 
   Future<AppUser> getUser(String uid) async {
-    final DocumentSnapshot doc = await _firestore.doc('/users/$uid').get();
-
+    final DocumentSnapshot doc = await _firestore.doc('users/$uid').get();
     return AppUser.fromJson(doc.data());
   }
 }

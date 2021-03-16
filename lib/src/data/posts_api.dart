@@ -19,8 +19,8 @@ class PostsApi {
 
   Future<Post> createPost(PostInfo info, String uid) async {
     final DocumentReference ref = _firestore.collection('posts').doc();
-    final List<String> images = await _uploadImages(ref.id, info.paths);
 
+    final List<String> images = await _uploadImages(ref.id, info.paths);
     final Post post = Post((PostBuilder b) {
       b
         ..id = ref.id
@@ -34,7 +34,6 @@ class PostsApi {
     });
 
     await ref.set(post.json);
-
     return post;
   }
 
@@ -42,13 +41,13 @@ class PostsApi {
     final List<String> images = <String>[];
     for (String path in paths) {
       final DocumentReference ref = _firestore.collection('NOT_USED').doc();
-
       final Reference storageRef = _storage.ref('posts/$id/${ref.id}');
       await storageRef.putFile(File(path));
 
       final String url = await storageRef.getDownloadURL();
       images.add(url);
     }
+
     return images;
   }
 
@@ -64,8 +63,10 @@ class PostsApi {
       final List<Post> result = snapshot.docs //
           .map((QueryDocumentSnapshot doc) => Post.fromJson(doc.data()))
           .toList();
+
       newResult.addAll(result);
     }
+
     return newResult;
   }
 }

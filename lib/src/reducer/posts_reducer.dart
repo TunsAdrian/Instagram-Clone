@@ -15,10 +15,6 @@ PostsState _updatePostInfo(PostsState state, UpdatePostInfo action) {
       b.info.paths.add(action.addImage);
     } else if (action.removeImage != null) {
       b.info.paths.remove(action.removeImage);
-    } else if (action.addUser != null) {
-      b.info.users.add(action.addUser);
-    } else if (action.removeUser != null) {
-      b.info.users.remove(action.removeUser);
     } else if (action.description != null) {
       final List<String> tags =
           RegExp('\#([a-zA-Z0-9]+)').allMatches(action.description).map((RegExpMatch match) => match.group(1)).toList();
@@ -26,10 +22,14 @@ PostsState _updatePostInfo(PostsState state, UpdatePostInfo action) {
       b.info
         ..description = action.description
         ..tags = ListBuilder<String>(tags);
-    } else if (action.lng != null && action.lat != null) {
+    } else if (action.addUser != null) {
+      b.info.users.add(action.addUser);
+    } else if (action.removeUser != null) {
+      b.info.users.remove(action.removeUser);
+    } else if (action.lat != null && action.lng != null) {
       b.info
-        ..lng = action.lng
-        ..lat = action.lat;
+        ..lat = action.lat
+        ..lng = action.lng;
     } else {
       b.info = PostInfo().toBuilder();
     }

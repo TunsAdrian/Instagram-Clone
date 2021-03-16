@@ -84,10 +84,10 @@ class AuthEpics {
   Stream<AppAction> _searchUsers(Stream<SearchUsers$> actions, EpicStore<AppState> store) {
     return actions //
         .debounceTime(const Duration(milliseconds: 500))
-        .flatMap((SearchUsers$ action) => Stream<SearchUsers$>.value(action))
-        .asyncMap((SearchUsers$ action) => _api.searchUsers(action.query))
-        .map((List<AppUser> users) => SearchUsers.successful(users))
-        .onErrorReturnWith((dynamic error) => SearchUsers.error(error));
+        .flatMap((SearchUsers$ action) => Stream<SearchUsers$>.value(action)
+            .asyncMap((SearchUsers$ action) => _api.searchUsers(action.query))
+            .map((List<AppUser> users) => SearchUsers.successful(users))
+            .onErrorReturnWith((dynamic error) => SearchUsers.error(error)));
   }
 
   Stream<AppAction> _updateFollowing(Stream<UpdateFollowing$> actions, EpicStore<AppState> store) {

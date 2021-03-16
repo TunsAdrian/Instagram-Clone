@@ -26,9 +26,8 @@ class _HomePageState extends State<HomePage> {
         const FeedPage(),
         const SearchUsersPage(showFollow: true),
         Container(color: Colors.blue),
-        Container(color: Colors.yellow),
+        Container(),
         Container(
-          color: Colors.orange,
           child: Center(
             child: IconButton(
               icon: const Icon(Icons.power_settings_new),
@@ -66,12 +65,12 @@ class _HomePageState extends State<HomePage> {
             label: 'add',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'home',
+            icon: Icon(Icons.not_interested_outlined),
+            label: 'not implemented',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'home',
+            icon: Icon(Icons.logout),
+            label: 'log out',
           ),
         ],
       ),
