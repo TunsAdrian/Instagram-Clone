@@ -1,6 +1,6 @@
-# Instagram Clone
+# Instagram Clone - Google Flutter Course
 
-Instagram clone application made with Flutter with the following features:
+Instagram clone application made in the Google Flutter Course, at "Atelierul digital pentru programatori 2020". The application has the following features:
 
 ## Setup project
 * [x] all necessary dependencies
@@ -51,8 +51,3 @@ Instagram clone application made with Flutter with the following features:
   * [ ] users posts
   * [ ] posts tagged with user
   * [ ] saved posts
-
-## (Optional) Chat
-  * [ ] show chats
-  * [ ] send message
-  * [ ] send pictures and videos
